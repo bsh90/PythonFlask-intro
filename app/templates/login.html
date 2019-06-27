@@ -1,34 +1,24 @@
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
-{% block content %}
+{% block app_content %}
     <div class="jumbotron text-center" style="background-color:#FFB6C1">    
     <h1>Log In</h1>
     </div>
 
-    <div class="container" style="margin: auto; width: 20%;">
-    <form action="" method="post" novalidate>
+    <div class="container">
+  
+    <div class="row">
+<div class="col-md-4"></div>
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
         
-        {{ form.hidden_tag() }}
-        <div class="form-group"><p>
-            {{ form.username.label }}<br>
-            {{ form.username(size=32) }}<br>
-            {% for error in form.username.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p></div>
-        <div class="form-group"><p>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}<br>
-            {% for error in form.password.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p></div>
-        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        <p>Forget Your Password?<a href="{{ url_for('reset_password_request') }}">Click to Reset It</a></p>
-        <p>{{ form.submit() }}</p>
-    </form>
-    
+<br>
+        <p>Forget Your Password? <a href="{{ url_for('reset_password_request') }}">Click to Reset It</a></p>      
     <p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
+</div>
+<div class="col-md-4"></div>
+</div>
 </div>
 {% endblock %}
 

@@ -13,4 +13,4 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['frozen_bsh@yahoo.com']
-    POSTS_PER_PAGE=20
+    POSTS_PER_PAGE=10
