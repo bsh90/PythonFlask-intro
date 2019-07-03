@@ -18,3 +18,4 @@ class Config(object):
     ADMINS = ['frozen_bsh@yahoo.com']
     POSTS_PER_PAGE=10
     LANGUAGES = ['en', 'de']
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
