@@ -1,4 +1,4 @@
-2019-07-03 17:52:02,518 ERROR: Exception on /search [GET] [in /home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/flask/app.py:1780]
+2019-07-04 16:42:55,369 ERROR: Exception on /search [GET] [in /home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/flask/app.py:1780]
 Traceback (most recent call last):
   File "/home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -18,10 +18,22 @@ Traceback (most recent call last):
     current_app.config['POSTS_PER_PAGE'])
   File "/home/bahar/microblog/app/models.py", line 16, in search
     ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/home/bahar/microblog/app/search.py", line 25, in query_index
-    return ids, search['hits']['total["value"]']
-KeyError: 'total["value"]'
-2019-07-03 17:52:04,617 ERROR: Exception on /search [GET] [in /home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/flask/app.py:1780]
+  File "/home/bahar/microblog/app/search.py", line 23, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "/home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 73, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 632, in search
+    doc_type, '_search'), params=params, body=body)
+  File "/home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/elasticsearch/transport.py", line 312, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 129, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.NotFoundError: TransportError(404, 'index_not_found_exception', 'no such index [post]')
+2019-07-04 16:43:44,996 INFO: Microblog startup [in /home/bahar/microblog/app/__init__.py:76]
+2019-07-04 16:45:26,314 INFO: Microblog startup [in /home/bahar/microblog/app/__init__.py:76]
+2019-07-04 16:45:28,828 ERROR: Exception on /search [GET] [in /home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/flask/app.py:1780]
 Traceback (most recent call last):
   File "/home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -41,10 +53,22 @@ Traceback (most recent call last):
     current_app.config['POSTS_PER_PAGE'])
   File "/home/bahar/microblog/app/models.py", line 16, in search
     ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/home/bahar/microblog/app/search.py", line 25, in query_index
-    return ids, search['hits']['total["value"]']
-KeyError: 'total["value"]'
-2019-07-03 17:52:08,837 ERROR: Exception on /search [GET] [in /home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/flask/app.py:1780]
+  File "/home/bahar/microblog/app/search.py", line 23, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "/home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/elasticsearch/client/utils.py", line 73, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/elasticsearch/client/__init__.py", line 632, in search
+    doc_type, '_search'), params=params, body=body)
+  File "/home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/elasticsearch/transport.py", line 312, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, ignore=ignore, timeout=timeout)
+  File "/home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/elasticsearch/connection/http_urllib3.py", line 129, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.NotFoundError: TransportError(404, 'index_not_found_exception', 'no such index [post]')
+2019-07-04 16:47:24,454 INFO: Microblog startup [in /home/bahar/microblog/app/__init__.py:76]
+2019-07-04 16:49:36,764 INFO: Microblog startup [in /home/bahar/microblog/app/__init__.py:76]
+2019-07-04 16:49:48,091 ERROR: Exception on /search [GET] [in /home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/flask/app.py:1780]
 Traceback (most recent call last):
   File "/home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/flask/app.py", line 2311, in wsgi_app
     response = self.full_dispatch_request()
@@ -60,10 +84,7 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/bahar/.virtualenvs/flaskenv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/bahar/microblog/app/main/routes.py", line 127, in search
-    current_app.config['POSTS_PER_PAGE'])
-  File "/home/bahar/microblog/app/models.py", line 16, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/home/bahar/microblog/app/search.py", line 25, in query_index
-    return ids, search['hits']['total["value"]']
-KeyError: 'total["value"]'
+  File "/home/bahar/microblog/app/main/routes.py", line 129, in search
+    if total > page * current_app.config['POSTS_PER_PAGE'] else None
+TypeError: '>' not supported between instances of 'dict' and 'int'
+2019-07-04 17:20:48,510 INFO: Microblog startup [in /home/bahar/microblog/app/__init__.py:76]
