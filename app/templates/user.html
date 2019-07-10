@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block app_content %}
-    <div class="jumbotron text-center" style="background-color:#FFB6C1">  
+    <div class="jumbotron text-center" style="background-image: url({{url_for('static', filename='bg1.png')}});">  
     <table align="center">
         <tr valign="top">
             <td style="padding-right:10px;"><img src="{{ user.avatar(128) }}"></td>
