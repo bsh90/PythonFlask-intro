@@ -5,3 +5,15 @@ A sample project based on this tutorial: https://blog.miguelgrinberg.com/post/th
 Deployed it on heroku website.
 
 Will be continued...
+- - - -
+Notes to Remember: 
+
+* workon flaskenv
+
+1. git remote add origin <YOUR_REPOSITORY_PATH>
+2. git add .
+3. git commit -m 'some change'
+4. git push -u origin master
+
+* flask db migrate -m "some changes"
+* flask db upgrade
