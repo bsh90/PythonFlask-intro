@@ -17,3 +17,6 @@ Notes to Remember:
 
 * flask db migrate -m "some changes"
 * flask db upgrade
+
+
+For python programming problems, my profile: https://py.checkio.org/user/bsh90/solutions/
